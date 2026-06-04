@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Auto Commit & Sync",
+  "description": "Automatically commits all changes and pushes to GitHub when a file is saved",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.jsx",
+      "*.js",
+      "*.css",
+      "*.html",
+      "*.json",
+      "*.md"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd c:\\Web\\SerialFac && git add -A && git commit -m \"auto: update files\" --allow-empty && git push origin main",
+    "timeout": 30
+  }
+}
